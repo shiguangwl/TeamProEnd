@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xxhoz.community.dao.HosArticleDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xxhoz.community.entity.HosArticleEntity" id="hosArticleMap">
+        <result property="pkArticleId" column="pk_article_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="articleTitle" column="article_title"/>
+        <result property="articleContent" column="article_content"/>
+        <result property="articleViews" column="article_views"/>
+        <result property="articleCommentCount" column="article_comment_count"/>
+        <result property="articleDate" column="article_date"/>
+        <result property="articleLikeCount" column="article_like_count"/>
+        <result property="articleMiniCentent" column="article_mini_centent"/>
+        <result property="articlePassword" column="article_password"/>
+        <result property="articleType" column="article_type"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>
