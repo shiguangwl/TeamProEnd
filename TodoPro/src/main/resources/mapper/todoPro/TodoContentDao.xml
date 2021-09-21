@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xxhoz.todoPro.dao.TodoContentDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xxhoz.todoPro.entity.TodoContentEntity" id="todoContentMap">
+        <result property="pkId" column="pk_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="todoGoupId" column="todo_goup_id"/>
+        <result property="todoCentent" column="todo_centent"/>
+        <result property="todoDesc" column="todo_desc"/>
+        <result property="todoStar" column="todo_star"/>
+        <result property="todoType" column="todo_type"/>
+        <result property="todoComplete" column="todo_complete"/>
+        <result property="todoTimer" column="todo_timer"/>
+        <result property="todoFdate" column="todo_fdate"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

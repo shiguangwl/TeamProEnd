@@ -2,6 +2,7 @@
 package com.xxhoz.modules.sys.controller;
 
 import com.xxhoz.common.annotation.SysLog;
+import com.xxhoz.common.utils.AbstractController;
 import com.xxhoz.common.utils.Constant;
 import com.xxhoz.common.utils.PageUtils;
 import com.xxhoz.common.utils.R;

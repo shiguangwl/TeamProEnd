@@ -1,5 +1,5 @@
 
-package com.xxhoz.modules.sys.controller;
+package com.xxhoz.common.utils;
 
 import com.xxhoz.modules.sys.entity.SysUserEntity;
 import org.apache.shiro.SecurityUtils;

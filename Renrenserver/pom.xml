@@ -20,26 +20,26 @@
 			<artifactId>Common</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>com.xxhoz</groupId>
-			<artifactId>Communication</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.xxhoz</groupId>-->
+<!--			<artifactId>Communication</artifactId>-->
+<!--			<version>1.0-SNAPSHOT</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>com.xxhoz</groupId>
 			<artifactId>Community</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>com.xxhoz</groupId>
-			<artifactId>TodoPro</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.xxhoz</groupId>
-			<artifactId>VideoPlay</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.xxhoz</groupId>-->
+<!--			<artifactId>TodoPro</artifactId>-->
+<!--			<version>1.0-SNAPSHOT</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>com.xxhoz</groupId>-->
+<!--			<artifactId>VideoPlay</artifactId>-->
+<!--			<version>1.0-SNAPSHOT</version>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<properties>

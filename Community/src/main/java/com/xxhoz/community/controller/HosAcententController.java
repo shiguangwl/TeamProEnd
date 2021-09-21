@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xxhoz.community.entity.HosArticleSortEntity;
-import com.xxhoz.community.service.HosArticleSortService;
+import com.xxhoz.community.entity.HosAcententEntity;
+import com.xxhoz.community.service.HosAcententService;
 import com.xxhoz.common.utils.PageUtils;
 import com.xxhoz.common.utils.R;
 
@@ -23,21 +23,21 @@ import com.xxhoz.common.utils.R;
  *
  * @author TimeHo
  * @email 2513356652@qq.com
- * @date 2021-09-17 08:42:08
+ * @date 2021-09-20 11:00:19
  */
 @RestController
-@RequestMapping("community/hosarticlesort")
-public class HosArticleSortController {
+@RequestMapping("community/hosacentent")
+public class HosAcententController {
     @Autowired
-    private HosArticleSortService hosArticleSortService;
+    private HosAcententService hosAcententService;
 
     /**
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("community:hosarticlesort:list")
+    @RequiresPermissions("community:hosacentent:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = hosArticleSortService.queryPage(params);
+        PageUtils page = hosAcententService.queryPage(params);
 
         return R.ok().put("page", page);
     }
@@ -47,20 +47,20 @@ public class HosArticleSortController {
      * 信息
      */
     @RequestMapping("/info/{articleId}")
-    @RequiresPermissions("community:hosarticlesort:info")
-    public R info(@PathVariable("articleId") Long articleId){
-		HosArticleSortEntity hosArticleSort = hosArticleSortService.getById(articleId);
+    @RequiresPermissions("community:hosacentent:info")
+    public R info(@PathVariable("articleId") Integer articleId){
+		HosAcententEntity hosAcentent = hosAcententService.getById(articleId);
 
-        return R.ok().put("hosArticleSort", hosArticleSort);
+        return R.ok().put("hosAcentent", hosAcentent);
     }
 
     /**
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("community:hosarticlesort:save")
-    public R save(@RequestBody HosArticleSortEntity hosArticleSort){
-		hosArticleSortService.save(hosArticleSort);
+    @RequiresPermissions("community:hosacentent:save")
+    public R save(@RequestBody HosAcententEntity hosAcentent){
+		hosAcententService.save(hosAcentent);
 
         return R.ok();
     }
@@ -69,9 +69,9 @@ public class HosArticleSortController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("community:hosarticlesort:update")
-    public R update(@RequestBody HosArticleSortEntity hosArticleSort){
-		hosArticleSortService.updateById(hosArticleSort);
+    @RequiresPermissions("community:hosacentent:update")
+    public R update(@RequestBody HosAcententEntity hosAcentent){
+		hosAcententService.updateById(hosAcentent);
 
         return R.ok();
     }
@@ -80,9 +80,9 @@ public class HosArticleSortController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("community:hosarticlesort:delete")
-    public R delete(@RequestBody Long[] articleIds){
-		hosArticleSortService.removeByIds(Arrays.asList(articleIds));
+    @RequiresPermissions("community:hosacentent:delete")
+    public R delete(@RequestBody Integer[] articleIds){
+		hosAcententService.removeByIds(Arrays.asList(articleIds));
 
         return R.ok();
     }

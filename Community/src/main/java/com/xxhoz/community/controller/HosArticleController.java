@@ -3,6 +3,9 @@ package com.xxhoz.community.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.xxhoz.common.utils.AbstractController;
+import com.xxhoz.community.entity.HosAcententEntity;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +22,7 @@ import com.xxhoz.common.utils.R;
 
 
 /**
- * 
+ *
  *
  * @author TimeHo
  * @email 2513356652@qq.com
@@ -27,7 +30,7 @@ import com.xxhoz.common.utils.R;
  */
 @RestController
 @RequestMapping("community/hosarticle")
-public class HosArticleController {
+public class HosArticleController extends AbstractController {
     @Autowired
     private HosArticleService hosArticleService;
 
@@ -38,7 +41,6 @@ public class HosArticleController {
     @RequiresPermissions("community:hosarticle:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = hosArticleService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 
@@ -59,9 +61,9 @@ public class HosArticleController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("community:hosarticle:save")
-    public R save(@RequestBody HosArticleEntity hosArticle){
-		hosArticleService.save(hosArticle);
-
+    public R save(@RequestBody HosArticleEntity hosArticle, @RequestBody HosAcententEntity hosAcententEntity){
+        hosArticle.setUserId(getUserId());
+        hosArticleService.saveArticle(hosArticle,hosAcententEntity);
         return R.ok();
     }
 
@@ -82,8 +84,7 @@ public class HosArticleController {
     @RequestMapping("/delete")
     @RequiresPermissions("community:hosarticle:delete")
     public R delete(@RequestBody Long[] pkArticleIds){
-		hosArticleService.removeByIds(Arrays.asList(pkArticleIds));
-
+		hosArticleService.removeArtcleById(Arrays.asList(pkArticleIds));
         return R.ok();
     }
 

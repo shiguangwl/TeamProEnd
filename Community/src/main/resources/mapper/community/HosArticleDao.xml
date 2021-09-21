@@ -19,6 +19,13 @@
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
+    <select id="selectByPage" resultType="com.xxhoz.community.entity.HosArticleEntity">
+        select * from
+                      teamproject.hos_article
+                          left join
+                      teamproject.sys_user
+                      on hos_article.user_id = sys_user.user_id  ${ew.customSqlSegment}
+    </select>
 
 
 </mapper>

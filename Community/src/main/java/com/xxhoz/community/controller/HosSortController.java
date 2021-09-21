@@ -1,6 +1,8 @@
 package com.xxhoz.community.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -19,7 +21,7 @@ import com.xxhoz.common.utils.R;
 
 
 /**
- * 
+ *
  *
  * @author TimeHo
  * @email 2513356652@qq.com
@@ -37,8 +39,9 @@ public class HosSortController {
     @RequestMapping("/list")
     @RequiresPermissions("community:hossort:list")
     public R list(@RequestParam Map<String, Object> params){
+        // TODO 演示使用
         PageUtils page = hosSortService.queryPage(params);
-
+//        List<HosSortEntity> sortEntityList = hosSortService.list();
         return R.ok().put("page", page);
     }
 
@@ -77,13 +80,22 @@ public class HosSortController {
     }
 
     /**
-     * 删除
+     * 删除多选
      */
     @RequestMapping("/delete")
     @RequiresPermissions("community:hossort:delete")
     public R delete(@RequestBody Long[] sortIds){
 		hosSortService.removeByIds(Arrays.asList(sortIds));
 
+        return R.ok();
+    }
+    /**
+     * 指定ID删除
+     */
+    @RequestMapping("/delete/{SortId}")
+    @RequiresPermissions("community:hossort:delete")
+    public R deleteOne(@PathVariable("SortId") long SortId){
+        hosSortService.removeById(SortId);
         return R.ok();
     }
 

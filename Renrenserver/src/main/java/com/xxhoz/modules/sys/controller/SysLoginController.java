@@ -1,6 +1,7 @@
 
 package com.xxhoz.modules.sys.controller;
 
+import com.xxhoz.common.utils.AbstractController;
 import com.xxhoz.common.utils.R;
 import com.xxhoz.modules.sys.entity.SysUserEntity;
 import com.xxhoz.modules.sys.form.SysLoginForm;
